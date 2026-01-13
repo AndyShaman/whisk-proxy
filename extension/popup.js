@@ -174,9 +174,10 @@ async function init() {
   const proxyStatus = await checkProxyStatus();
 
   if (!proxyStatus.connected && proxyStatus.message === 'Proxy server not running') {
-    updateStatus(false, 'Proxy server not running');
-    infoEl.textContent = 'Start the MCP server first: npm run dev';
-    connectBtn.disabled = true;
+    updateStatus(false, 'Waiting for generation request...');
+    infoEl.textContent = 'Server starts automatically when Claude Code generates an image.';
+    // Don't disable button - user might want to connect after starting generation
+    connectBtn.disabled = false;
     return;
   }
 
