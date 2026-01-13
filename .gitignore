@@ -1,0 +1,29 @@
+# Auth files - contains Google session, never commit
+auth/
+
+# Build output
+dist/
+
+# Dependencies
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test output
+test-image.png
+whisk-images/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+src/extension/
