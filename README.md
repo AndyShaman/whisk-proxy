@@ -217,6 +217,26 @@ MIT
 
 ---
 
+## Безопасность / Security
+
+**RU:**
+- 🔒 **Токены хранятся только локально** — в папке `auth/` на вашем компьютере
+- 🔒 **Никакие данные не отправляются на сторонние серверы** — только напрямую в Google API
+- 🔒 **Расширение работает только на localhost:3847** — недоступно извне
+- 🔒 **Исходный код полностью открыт** — вы можете проверить каждую строку
+- 🔒 **Папка auth/ в .gitignore** — токены никогда не попадут в git
+
+**EN:**
+- 🔒 **Tokens stored locally only** — in `auth/` folder on your computer
+- 🔒 **No data sent to third-party servers** — only directly to Google API
+- 🔒 **Extension works only on localhost:3847** — not accessible from outside
+- 🔒 **Source code is fully open** — you can inspect every line
+- 🔒 **auth/ folder in .gitignore** — tokens never get committed to git
+
+---
+
 ## Автор / Author
+
+**AI Handler** — [Telegram](https://t.me/AI_Handler) | [YouTube](https://www.youtube.com/channel/UCLkP6wuW_P2hnagdaZMBtCw)
 
 Создано с помощью Claude Code / Built with Claude Code
