@@ -83,8 +83,8 @@ mkdir -p ~/.claude/skills
 # Скопируйте skill
 cp -r ~/Documents/whisk-proxy/skills/whisk ~/.claude/skills/
 
-# Замените WHISK_PATH на реальный путь
-sed -i '' 's|WHISK_PATH|~/Documents/whisk-proxy|g' ~/.claude/skills/whisk/SKILL.md
+# Замените WHISK_PROXY_PATH на реальный путь
+sed -i '' 's|WHISK_PROXY_PATH|~/Documents/whisk-proxy|g' ~/.claude/skills/whisk/SKILL.md
 ```
 
 ## Готово! Как пользоваться
@@ -143,8 +143,8 @@ mkdir -p ~/.claude/skills
 # Copy skill
 cp -r ~/Documents/whisk-proxy/skills/whisk ~/.claude/skills/
 
-# Replace WHISK_PATH with actual path
-sed -i '' 's|WHISK_PATH|~/Documents/whisk-proxy|g' ~/.claude/skills/whisk/SKILL.md
+# Replace WHISK_PROXY_PATH with actual path
+sed -i '' 's|WHISK_PROXY_PATH|~/Documents/whisk-proxy|g' ~/.claude/skills/whisk/SKILL.md
 ```
 
 ## Done! How to Use
