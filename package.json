@@ -6,6 +6,17 @@
   "bin": {
     "whisk": "./bin/whisk.js"
   },
+  "files": [
+    "bin",
+    "src",
+    "skills",
+    "extension",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "build": "tsc",
     "start": "tsx src/cli.ts"

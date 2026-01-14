@@ -19,13 +19,14 @@ const cliPath = join(__dirname, '..', 'src', 'cli.ts');
 const args = process.argv.slice(2);
 
 // Run tsx with cli.ts and pass all arguments
-// Using shell: false for security (no shell injection)
+// On Windows, shell: true is required to run .cmd files
 const isWindows = process.platform === 'win32';
 const npxCmd = isWindows ? 'npx.cmd' : 'npx';
 
 const child = spawn(npxCmd, ['tsx', cliPath, ...args], {
     stdio: 'inherit',
-    cwd: process.cwd()
+    cwd: process.cwd(),
+    shell: isWindows  // Required for .cmd files on Windows
 });
 
 child.on('error', (err) => {

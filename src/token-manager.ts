@@ -5,10 +5,10 @@
 
 import * as fs from "fs";
 import * as path from "path";
-import { fileURLToPath } from "url";
+import * as os from "os";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const AUTH_DIR = path.join(__dirname, "..", "auth");
+// Store tokens in user's home directory for cross-platform compatibility
+const AUTH_DIR = path.join(os.homedir(), ".whisk-proxy");
 const TOKEN_FILE = path.join(AUTH_DIR, "token.json");
 
 interface TokenData {
