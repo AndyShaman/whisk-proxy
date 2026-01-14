@@ -5,13 +5,13 @@ description: Use when user asks to generate, create, or draw an image, photo, pi
 
 # Whisk - Image Generation via Google Imagen 3.5
 
-Generate images using Google Whisk AI directly from Claude Code via CLI.
+Generate images using Google Whisk AI directly from Claude Code.
 
 ## When to Use
 
 - User asks to generate/create/draw an image, photo, picture
 - User wants a logo, illustration, art, or visualization
-- Keywords: "нарисуй", "сгенерируй", "создай картинку", "сделай фото", "фотографию", "изображение", "generate", "draw", "create image"
+- Keywords: "нарисуй", "сгенерируй", "создай картинку", "сделай фото", "generate", "draw", "create image"
 
 ## Workflow (IMPORTANT)
 
@@ -34,10 +34,10 @@ If user chooses default or doesn't respond, use `./whisk-images`.
 Why: Reading PNG files converts them to base64 and consumes thousands of tokens from context window.
 
 After generation:
-1. ✅ Show only the file path to user
-2. ✅ Tell user: "Изображение сохранено: <path>"
-3. ❌ DO NOT use Read tool on generated .png files
-4. ❌ DO NOT display the image inline
+1. Show only the file path to user
+2. Tell user: "Изображение сохранено: <path>"
+3. DO NOT use Read tool on generated .png files
+4. DO NOT display the image inline
 
 User can open the file manually in their file manager or image viewer.
 
@@ -45,11 +45,11 @@ User can open the file manually in their file manager or image viewer.
 
 | Command | Description |
 |---------|-------------|
-| `generate "prompt"` | Generate image |
-| `generate "prompt" -c 3` | Generate 3 variants |
-| `generate "prompt" -r 16:9` | Landscape format |
-| `generate "prompt" -o ./folder` | Save to folder |
-| `status` | Check auth status |
+| `whisk generate "prompt"` | Generate image |
+| `whisk generate "prompt" -c 3` | Generate 3 variants |
+| `whisk generate "prompt" -r 16:9` | Landscape format |
+| `whisk generate "prompt" -o ./folder` | Save to folder |
+| `whisk status` | Check auth status |
 
 | Ratio | Size | Use Case |
 |-------|------|----------|
@@ -59,10 +59,8 @@ User can open the file manually in their file manager or image viewer.
 
 ## CLI Usage
 
-**Note:** `WHISK_PROXY_PATH` is the path where whisk-proxy is installed.
-
 ```bash
-npx tsx WHISK_PROXY_PATH/src/cli.ts generate "your prompt" [options]
+whisk generate "your prompt" [options]
 ```
 
 ### Options
@@ -75,16 +73,16 @@ npx tsx WHISK_PROXY_PATH/src/cli.ts generate "your prompt" [options]
 
 ```bash
 # Simple generation
-npx tsx WHISK_PROXY_PATH/src/cli.ts generate "cat in space, digital art"
+whisk generate "cat in space, digital art"
 
 # Multiple variants
-npx tsx WHISK_PROXY_PATH/src/cli.ts generate "minimalist coffee shop logo" -c 3
+whisk generate "minimalist coffee shop logo" -c 3
 
 # Landscape banner
-npx tsx WHISK_PROXY_PATH/src/cli.ts generate "sunset over ocean" -r 16:9
+whisk generate "sunset over ocean" -r 16:9
 
 # Custom output folder
-npx tsx WHISK_PROXY_PATH/src/cli.ts generate "abstract background" -o ./assets/bg
+whisk generate "abstract background" -o ./assets/bg
 ```
 
 ## Authorization Flow
@@ -120,5 +118,5 @@ CLI will automatically re-request authorization when token expires.
 
 ### Check status
 ```bash
-npx tsx WHISK_PROXY_PATH/src/cli.ts status
+whisk status
 ```
