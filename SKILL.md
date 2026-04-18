@@ -1,11 +1,6 @@
 ---
 name: whisk-proxy
-description: >
-  Generate images with Google Imagen 4 and Nano Banana for free via Flow API.
-  No API key, no paid subscription — just a Google account and Chrome extension.
-  Use when the user asks to generate, create, or make an image, picture, illustration, logo, banner, or avatar.
-  Triggers: generate image, create picture, make illustration, нарисуй, сгенерируй картинку, создай изображение.
-  Do NOT use for image editing, upscaling, background removal, video generation, or non-Google AI models (DALL-E, Midjourney, Stable Diffusion).
+description: "Generate images with Google Imagen 4 and Nano Banana for free via Flow API. No API key, no paid subscription — just a Google account and Chrome extension. Use when the user asks to generate, create, or make an image, picture, illustration, logo, banner, or avatar. Triggers: generate image, create picture, make illustration, нарисуй, сгенерируй картинку, создай изображение. Do NOT use for image editing, upscaling, background removal, video generation, or non-Google AI models (DALL-E, Midjourney, Stable Diffusion)."
 ---
 
 # Flow Image Generator
@@ -52,11 +47,7 @@ node {baseDir}/scripts/generate.mjs -p "sunset over mountains" -o ./images
 
 ## Aspect Ratios
 
-- `1:1` (1024x1024) — avatars, icons, social posts
-- `16:9` (1365x768) — banners, covers, YouTube thumbnails
-- `9:16` (768x1365) — stories, reels, vertical posters
-- `4:3` — classic landscape
-- `3:4` — classic portrait
+Supported: `1:1` (default), `16:9`, `9:16`, `4:3`, `3:4`. See [REFERENCE.md](REFERENCE.md) for resolutions and use cases.
 
 ## Authentication
 
@@ -90,3 +81,5 @@ The agent should check `status.mjs` first. If token is expired, run `generate.mj
 - The API is free but rate-limited (Google account level)
 - Images saved as PNG
 - Do NOT read generated PNG files into context — they consume thousands of tokens
+
+See [README.md](README.md) for detailed setup instructions and [REFERENCE.md](REFERENCE.md) for troubleshooting and model details.
